@@ -1,18 +1,10 @@
-/* =====================================================
-   GLOBAL
-===================================================== */
-
 :root {
   --background: #080808;
   --surface: #111111;
-  --surface-light: #181818;
-
   --text: #f5f5f0;
   --muted: #858585;
   --muted-dark: #555555;
-
   --line: rgba(255, 255, 255, 0.08);
-
   --accent: #b8ff5c;
 
   --font-main: "Manrope", sans-serif;
@@ -31,20 +23,10 @@ html {
 
 body {
   min-width: 320px;
-
   background: var(--background);
   color: var(--text);
-
   font-family: var(--font-main);
-
   overflow-x: hidden;
-
-  text-rendering: optimizeLegibility;
-}
-
-body::selection {
-  background: var(--text);
-  color: var(--background);
 }
 
 a {
@@ -52,22 +34,17 @@ a {
   text-decoration: none;
 }
 
-button {
-  font-family: inherit;
-}
 
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar {
   position: fixed;
+  z-index: 1000;
 
   top: 0;
   left: 0;
-
-  z-index: 1000;
 
   width: 100%;
   height: 88px;
@@ -86,13 +63,9 @@ button {
   border-bottom: 1px solid var(--line);
 }
 
-
-/* Logo */
-
 .logo {
   display: flex;
   align-items: center;
-
   gap: 10px;
 
   font-size: 18px;
@@ -109,7 +82,6 @@ button {
   place-items: center;
 
   border: 1px solid rgba(255, 255, 255, 0.25);
-
   border-radius: 50%;
 
   font-size: 12px;
@@ -120,12 +92,8 @@ button {
 .logo:hover .logo-mark {
   background: var(--text);
   color: var(--background);
-
   transform: rotate(15deg);
 }
-
-
-/* Navigation Links */
 
 .nav-links {
   position: absolute;
@@ -135,7 +103,6 @@ button {
   transform: translateX(-50%);
 
   display: flex;
-
   align-items: center;
 
   gap: 38px;
@@ -147,11 +114,9 @@ button {
   color: var(--muted);
 
   font-family: var(--font-mono);
-
   font-size: 11px;
 
   text-transform: uppercase;
-
   letter-spacing: 0.08em;
 
   transition: color 0.3s ease;
@@ -181,9 +146,6 @@ button {
   width: 100%;
 }
 
-
-/* CTA */
-
 .nav-cta {
   display: flex;
   align-items: center;
@@ -191,11 +153,9 @@ button {
   gap: 10px;
 
   font-family: var(--font-mono);
-
   font-size: 11px;
 
   text-transform: uppercase;
-
   letter-spacing: 0.06em;
 }
 
@@ -208,9 +168,6 @@ button {
 .nav-cta:hover span {
   transform: translate(4px, -4px);
 }
-
-
-/* Mobile menu button */
 
 .menu-button {
   display: none;
@@ -234,14 +191,12 @@ button {
   margin: 6px auto;
 
   background: white;
-
-  transition: transform 0.3s ease;
 }
 
 
-/* =====================================================
+/* =========================
    HERO
-===================================================== */
+========================= */
 
 .hero {
   position: relative;
@@ -255,9 +210,6 @@ button {
 
   isolation: isolate;
 }
-
-
-/* Background grid */
 
 .hero-grid {
   position: absolute;
@@ -287,9 +239,6 @@ button {
     );
 }
 
-
-/* Ambient lighting */
-
 .hero::after {
   content: "";
 
@@ -315,9 +264,9 @@ button {
 }
 
 
-/* =====================================================
+/* =========================
    HERO CONTENT
-===================================================== */
+========================= */
 
 .hero-content {
   position: relative;
@@ -329,12 +278,8 @@ button {
   max-width: 900px;
 }
 
-
-/* Eyebrow */
-
 .eyebrow {
   display: flex;
-
   align-items: center;
 
   gap: 10px;
@@ -348,7 +293,6 @@ button {
   font-size: 11px;
 
   text-transform: uppercase;
-
   letter-spacing: 0.08em;
 }
 
@@ -363,9 +307,6 @@ button {
   box-shadow:
     0 0 14px rgba(184, 255, 92, 0.65);
 }
-
-
-/* Main heading */
 
 .hero h1 {
   max-width: 950px;
@@ -395,9 +336,6 @@ button {
   -webkit-text-stroke-color: white;
 }
 
-
-/* Description */
-
 .hero-description {
   max-width: 470px;
 
@@ -411,13 +349,12 @@ button {
 }
 
 
-/* =====================================================
-   HERO BUTTONS
-===================================================== */
+/* =========================
+   BUTTONS
+========================= */
 
 .hero-actions {
   display: flex;
-
   align-items: center;
 
   gap: 30px;
@@ -425,15 +362,9 @@ button {
   margin-top: 42px;
 }
 
-
-/* Main button */
-
 .primary-button {
   display: inline-flex;
-
   align-items: center;
-
-  justify-content: space-between;
 
   gap: 30px;
 
@@ -446,22 +377,16 @@ button {
   background: var(--text);
 
   font-size: 11px;
-
   font-weight: 700;
 
   text-transform: uppercase;
-
   letter-spacing: 0.05em;
 
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .primary-button span {
   font-size: 18px;
-
-  transition: transform 0.3s ease;
 }
 
 .primary-button:hover {
@@ -470,16 +395,8 @@ button {
   background: white;
 }
 
-.primary-button:hover span {
-  transform: translate(3px, -3px);
-}
-
-
-/* Secondary button */
-
 .text-button {
   display: inline-flex;
-
   align-items: center;
 
   gap: 12px;
@@ -491,18 +408,17 @@ button {
   font-size: 10px;
 
   text-transform: uppercase;
-
   letter-spacing: 0.07em;
 
   transition: color 0.3s ease;
 }
 
-.text-button span {
-  transition: transform 0.3s ease;
-}
-
 .text-button:hover {
   color: white;
+}
+
+.text-button span {
+  transition: transform 0.3s ease;
 }
 
 .text-button:hover span {
@@ -510,9 +426,9 @@ button {
 }
 
 
-/* =====================================================
+/* =========================
    PROFILE PHOTO
-===================================================== */
+========================= */
 
 .hero-photo {
   position: absolute;
@@ -520,7 +436,6 @@ button {
   z-index: 4;
 
   top: 50%;
-
   right: 7vw;
 
   width: min(31vw, 450px);
@@ -528,13 +443,7 @@ button {
   transform: translateY(-50%);
 
   animation: photoFloat 7s ease-in-out infinite;
-
-  transition:
-    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-
-/* Photo container */
 
 .photo-frame {
   position: relative;
@@ -552,14 +461,7 @@ button {
   box-shadow:
     0 35px 100px rgba(0, 0, 0, 0.6),
     0 0 80px rgba(255, 255, 255, 0.035);
-
-  transition:
-    border-color 0.5s ease,
-    box-shadow 0.5s ease;
 }
-
-
-/* Image */
 
 .photo-frame img {
   display: block;
@@ -580,9 +482,6 @@ button {
     transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-
-/* Image overlay */
-
 .photo-frame::after {
   content: "";
 
@@ -594,21 +493,10 @@ button {
     linear-gradient(
       180deg,
       transparent 45%,
-      rgba(0, 0, 0, 0.5) 100%
+      rgba(0, 0, 0, 0.5)
     );
 
   pointer-events: none;
-}
-
-
-/* Hover */
-
-.hero-photo:hover .photo-frame {
-  border-color: rgba(255, 255, 255, 0.3);
-
-  box-shadow:
-    0 45px 120px rgba(0, 0, 0, 0.7),
-    0 0 100px rgba(255, 255, 255, 0.06);
 }
 
 .hero-photo:hover .photo-frame img {
@@ -617,19 +505,11 @@ button {
   transform: scale(1.06);
 }
 
-
-/* =====================================================
-   PHOTO DECORATIONS
-===================================================== */
-
 .photo-decoration {
   position: absolute;
 
   pointer-events: none;
 }
-
-
-/* Offset frame */
 
 .photo-decoration-1 {
   z-index: -1;
@@ -644,14 +524,10 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-
-/* Green circle */
-
 .photo-decoration-2 {
   z-index: -2;
 
   right: -35px;
-
   bottom: -35px;
 
   width: 72px;
@@ -660,38 +536,25 @@ button {
   border-radius: 50%;
 
   background: var(--accent);
-
-  box-shadow:
-    0 0 50px rgba(184, 255, 92, 0.12);
 }
-
-
-/* Number */
 
 .photo-number {
   position: absolute;
 
-  right: 18px;
-
   top: 18px;
+  right: 18px;
 
   color: rgba(255, 255, 255, 0.7);
 
   font-family: var(--font-mono);
 
   font-size: 10px;
-
-  letter-spacing: 0.1em;
 }
-
-
-/* Vertical label */
 
 .photo-label {
   position: absolute;
 
   left: -55px;
-
   bottom: 30px;
 
   writing-mode: vertical-rl;
@@ -703,15 +566,10 @@ button {
   font-size: 9px;
 
   text-transform: uppercase;
-
   letter-spacing: 0.1em;
 }
 
-
-/* Floating animation */
-
 @keyframes photoFloat {
-
   0%,
   100% {
     transform: translateY(-50%);
@@ -720,27 +578,22 @@ button {
   50% {
     transform: translateY(calc(-50% - 10px));
   }
-
 }
 
 
-/* =====================================================
+/* =========================
    HERO FOOTER
-===================================================== */
+========================= */
 
 .hero-footer {
   position: absolute;
 
   left: 10vw;
-
   right: 10vw;
-
   bottom: 32px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
   color: var(--muted-dark);
@@ -750,13 +603,11 @@ button {
   font-size: 9px;
 
   text-transform: uppercase;
-
   letter-spacing: 0.08em;
 }
 
 .scroll-indicator {
   display: flex;
-
   align-items: center;
 
   gap: 20px;
@@ -786,7 +637,6 @@ button {
 }
 
 @keyframes scrollLine {
-
   0%,
   100% {
     transform: translateX(0);
@@ -795,13 +645,12 @@ button {
   50% {
     transform: translateX(65px);
   }
-
 }
 
 
-/* =====================================================
-   PLACEHOLDER SECTIONS
-===================================================== */
+/* =========================
+   OTHER SECTIONS
+========================= */
 
 .placeholder-section {
   position: relative;
@@ -811,9 +660,7 @@ button {
   padding: 150px 10vw;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 
   border-top: 1px solid var(--line);
@@ -848,9 +695,9 @@ button {
 }
 
 
-/* =====================================================
+/* =========================
    CONTACT
-===================================================== */
+========================= */
 
 .contact-section {
   min-height: 100vh;
@@ -858,9 +705,7 @@ button {
   padding: 150px 10vw;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 
   border-top: 1px solid var(--line);
@@ -896,7 +741,6 @@ button {
   width: fit-content;
 
   display: inline-flex;
-
   align-items: center;
 
   gap: 30px;
@@ -910,12 +754,9 @@ button {
   color: var(--background);
 
   font-size: 11px;
-
   font-weight: 700;
 
   text-transform: uppercase;
-
-  letter-spacing: 0.05em;
 
   transition: transform 0.3s ease;
 }
@@ -929,9 +770,9 @@ button {
 }
 
 
-/* =====================================================
-   MOBILE NAVIGATION
-===================================================== */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 800px) {
 
@@ -954,7 +795,6 @@ button {
     display: none;
 
     flex-direction: column;
-
     align-items: flex-start;
 
     gap: 25px;
@@ -982,22 +822,14 @@ button {
     display: block;
   }
 
-}
 
-
-/* =====================================================
-   MOBILE HERO
-===================================================== */
-
-@media (max-width: 800px) {
+  /* Hero */
 
   .hero {
     min-height: 100svh;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: flex-start;
 
     padding: 125px 6vw 100px;
@@ -1021,7 +853,6 @@ button {
 
   .hero-actions {
     flex-direction: column;
-
     align-items: flex-start;
 
     gap: 25px;
@@ -1039,7 +870,6 @@ button {
     right: auto;
 
     width: 68vw;
-
     max-width: 330px;
 
     margin: 80px auto 20px;
@@ -1049,12 +879,7 @@ button {
     animation: mobilePhotoFloat 6s ease-in-out infinite;
   }
 
-  .hero-photo:hover {
-    transform: none;
-  }
-
   @keyframes mobilePhotoFloat {
-
     0%,
     100% {
       transform: translateY(0);
@@ -1063,7 +888,6 @@ button {
     50% {
       transform: translateY(-8px);
     }
-
   }
 
   .photo-label {
@@ -1082,22 +906,18 @@ button {
     height: 55px;
   }
 
-
-  /* Footer */
-
   .hero-footer {
     left: 6vw;
     right: 6vw;
-
     bottom: 25px;
   }
 
 }
 
 
-/* =====================================================
+/* =========================
    SMALL MOBILE
-===================================================== */
+========================= */
 
 @media (max-width: 480px) {
 
@@ -1123,28 +943,20 @@ button {
     margin-top: 65px;
   }
 
-  .hero-footer {
-    font-size: 8px;
-  }
-
   .scroll-indicator > span {
     display: none;
   }
 
-  .placeholder-section {
-    padding: 120px 6vw;
-  }
-
+  .placeholder-section,
   .contact-section {
     padding: 120px 6vw;
   }
-
 }
 
 
-/* =====================================================
-   REDUCED MOTION
-===================================================== */
+/* =========================
+   ACCESSIBILITY
+========================= */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -1161,5 +973,4 @@ button {
 
     transition-duration: 0.01ms !important;
   }
-
 }
