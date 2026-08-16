@@ -4,30 +4,28 @@
 
 const educationData = {
 
-  btech: {
+  school: {
 
-    number: "01",
+    number: "03",
 
-    status: "CURRENT",
+    status: "COMPLETED",
 
-    statusClass: "current",
+    statusClass: "",
 
-    period: "2025 — 2029",
+    period: "2021 — 2023",
 
-    title: "B.Tech",
+    title: "High School",
 
-    institution:
-      "Vignan University, Vadlamudi",
+    institution: "Bhashyam High School",
 
-    location:
-      "Guntur, Andhra Pradesh",
+    location: "Guntur",
 
     description:
-      "Currently pursuing my Bachelor of Technology at Vignan University, Vadlamudi. Building a strong foundation in engineering, technology, problem solving and practical development.",
+      "Completed my high school education at Bhashyam High School, Guntur, with a strong academic foundation and a focus on developing disciplined learning habits.",
 
-    resultLabel: "CGPA",
+    resultLabel: "PERCENTAGE",
 
-    result: "8.55"
+    result: "95.6%"
 
   },
 
@@ -44,14 +42,12 @@ const educationData = {
 
     title: "MPC",
 
-    institution:
-      "Bhashyam Junior College",
+    institution: "Bhashyam Junior College",
 
-    location:
-      "Guntur, Andhra Pradesh",
+    location: "Guntur",
 
     description:
-      "Completed my intermediate education in the MPC stream at Bhashyam Junior College, Guntur, with a strong academic performance and a solid foundation in Mathematics, Physics and Chemistry.",
+      "Completed my MPC stream at Bhashyam Junior College, Guntur, with a strong foundation in Mathematics, Physics and Chemistry.",
 
     resultLabel: "PERCENTAGE",
 
@@ -60,30 +56,28 @@ const educationData = {
   },
 
 
-  school: {
+  btech: {
 
-    number: "03",
+    number: "01",
 
-    status: "COMPLETED",
+    status: "CURRENT",
 
-    statusClass: "",
+    statusClass: "current",
 
-    period: "2021 — 2023",
+    period: "2025 — 2029",
 
-    title: "High School",
+    title: "B.Tech",
 
-    institution:
-      "Bhashyam High School",
+    institution: "Vignan University, Vadlamudi",
 
-    location:
-      "Guntur, Andhra Pradesh",
+    location: "Guntur",
 
     description:
-      "Completed my high school education at Bhashyam High School, Guntur, developing a strong academic foundation and the discipline that continues to shape my learning journey.",
+      "Currently pursuing my Bachelor of Technology at Vignan University, Vadlamudi, while developing my skills in engineering, technology, problem solving and practical development.",
 
-    resultLabel: "PERCENTAGE",
+    resultLabel: "CGPA",
 
-    result: "95.6%"
+    result: "8.55"
 
   }
 
@@ -108,56 +102,56 @@ const focusCard =
 
 
 const focusNumber =
-  document.querySelector(
-    "#focusNumber"
+  document.getElementById(
+    "focusNumber"
   );
 
 
 const focusStatus =
-  document.querySelector(
-    "#focusStatus"
+  document.getElementById(
+    "focusStatus"
   );
 
 
 const focusPeriod =
-  document.querySelector(
-    "#focusPeriod"
+  document.getElementById(
+    "focusPeriod"
   );
 
 
 const focusTitle =
-  document.querySelector(
-    "#focusTitle"
+  document.getElementById(
+    "focusTitle"
   );
 
 
 const focusInstitution =
-  document.querySelector(
-    "#focusInstitution"
+  document.getElementById(
+    "focusInstitution"
   );
 
 
 const focusLocation =
-  document.querySelector(
-    "#focusLocation"
+  document.getElementById(
+    "focusLocation"
   );
 
 
 const focusDescription =
-  document.querySelector(
-    "#focusDescription"
+  document.getElementById(
+    "focusDescription"
   );
 
 
 const focusResultLabel =
-  document.querySelector(
-    "#focusResultLabel"
+  document.getElementById(
+    "focusResultLabel"
   );
 
 
 const focusResult =
-  document.querySelector(
-    "#focusResult"
+  document.getElementById(
+    "focusResult"
   );
 
 
@@ -168,8 +162,7 @@ const focusResult =
 
 function updateEducation(key) {
 
-  const data =
-    educationData[key];
+  const data = educationData[key];
 
 
   if (!data) {
@@ -177,7 +170,9 @@ function updateEducation(key) {
   }
 
 
-  /* Restart animation */
+  /*
+    Restart card animation
+  */
 
   focusCard.classList.remove(
     "switching"
@@ -192,7 +187,9 @@ function updateEducation(key) {
   );
 
 
-  /* Update content */
+  /*
+    Update focus card
+  */
 
   focusNumber.textContent =
     data.number;
@@ -236,7 +233,9 @@ function updateEducation(key) {
 
 
 
-  /* Update active timeline */
+  /*
+    Update active timeline
+  */
 
   document
     .querySelectorAll(
@@ -246,9 +245,7 @@ function updateEducation(key) {
 
       item.classList.toggle(
         "active",
-
         item.dataset.education === key
-
       );
 
     });
@@ -274,11 +271,16 @@ educationButtons.forEach((button) => {
       updateEducation(key);
 
 
-      /* On smaller screens,
-         bring the focus card into view */
+      /*
+        On mobile/tablet,
+        scroll to the focus card.
+      */
 
       if (
-        window.innerWidth <= 900
+        window.innerWidth <= 900 &&
+        button.classList.contains(
+          "timeline-item"
+        )
       ) {
 
         setTimeout(() => {
@@ -317,34 +319,36 @@ const navLinks =
 
 const observer =
   new IntersectionObserver(
+
     (entries) => {
 
       entries.forEach((entry) => {
 
-        if (entry.isIntersecting) {
-
-          navLinks.forEach((link) => {
-
-            link.classList.remove(
-              "active"
-            );
-
-          });
+        if (!entry.isIntersecting) {
+          return;
+        }
 
 
-          const activeLink =
-            document.querySelector(
-              `.nav-links a[href="#${entry.target.id}"]`
-            );
+        navLinks.forEach((link) => {
+
+          link.classList.remove(
+            "active"
+          );
+
+        });
 
 
-          if (activeLink) {
+        const activeLink =
+          document.querySelector(
+            `.nav-links a[href="#${entry.target.id}"]`
+          );
 
-            activeLink.classList.add(
-              "active"
-            );
 
-          }
+        if (activeLink) {
+
+          activeLink.classList.add(
+            "active"
+          );
 
         }
 
