@@ -1,18 +1,12 @@
-/* =====================================================
-   RESET
-===================================================== */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
 html {
   scroll-behavior: smooth;
 }
-
 
 body {
   background: #080808;
@@ -21,17 +15,14 @@ body {
   overflow-x: hidden;
 }
 
-
 a {
   color: inherit;
   text-decoration: none;
 }
 
-
 button {
   font: inherit;
 }
-
 
 :root {
   --background: #080808;
@@ -45,10 +36,7 @@ button {
 }
 
 
-
-/* =====================================================
-   NAVBAR
-===================================================== */
+/* NAVBAR */
 
 .navbar {
   position: fixed;
@@ -70,19 +58,16 @@ button {
   border-bottom: 1px solid var(--line);
 }
 
-
 .logo {
   font-size: 14px;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
-
 .nav-links {
   display: flex;
   gap: 32px;
 }
-
 
 .nav-links a {
   color: var(--muted);
@@ -96,12 +81,10 @@ button {
   transition: color 0.3s ease;
 }
 
-
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--text);
 }
-
 
 .nav-contact {
   color: var(--accent);
@@ -113,10 +96,7 @@ button {
 }
 
 
-
-/* =====================================================
-   HERO
-===================================================== */
+/* HERO */
 
 .hero {
   min-height: 100vh;
@@ -130,7 +110,6 @@ button {
   gap: 60px;
 }
 
-
 .eyebrow {
   color: var(--muted);
 
@@ -139,7 +118,6 @@ button {
 
   letter-spacing: 0.12em;
 }
-
 
 .hero h1 {
   margin-top: 30px;
@@ -151,11 +129,9 @@ button {
   letter-spacing: -0.075em;
 }
 
-
 .hero h1 span {
   color: var(--accent);
 }
-
 
 .hero-description {
   max-width: 500px;
@@ -168,14 +144,12 @@ button {
   line-height: 1.8;
 }
 
-
 .hero-actions {
   display: flex;
   gap: 15px;
 
   margin-top: 40px;
 }
-
 
 .button {
   padding: 15px 22px;
@@ -190,29 +164,22 @@ button {
   transition: all 0.3s ease;
 }
 
-
 .button-primary {
   background: var(--accent);
   color: #080808;
-
   border-color: var(--accent);
 }
-
 
 .button-primary:hover {
   transform: translateY(-3px);
 }
-
 
 .button-secondary:hover {
   background: var(--surface);
 }
 
 
-
-/* =====================================================
-   HERO IMAGE
-===================================================== */
+/* HERO IMAGE */
 
 .hero-image-wrap {
   position: relative;
@@ -222,7 +189,6 @@ button {
 
   justify-self: end;
 }
-
 
 .hero-image-label {
   display: flex;
@@ -236,7 +202,6 @@ button {
   font-size: 8px;
 }
 
-
 .hero-image {
   width: 100%;
 
@@ -249,7 +214,6 @@ button {
   border: 1px solid var(--line);
 }
 
-
 .hero-image img {
   width: 100%;
   height: 100%;
@@ -261,11 +225,9 @@ button {
   transition: transform 0.7s ease;
 }
 
-
 .hero-image:hover img {
   transform: scale(1.03);
 }
-
 
 .hero-image-caption {
   margin-top: 12px;
@@ -279,10 +241,7 @@ button {
 }
 
 
-
-/* =====================================================
-   SECTION NUMBER
-===================================================== */
+/* SECTION NUMBER */
 
 .section-number {
   color: var(--muted-dark);
@@ -292,10 +251,7 @@ button {
 }
 
 
-
-/* =====================================================
-   ABOUT
-===================================================== */
+/* ABOUT */
 
 .about-section {
   min-height: 100vh;
@@ -304,7 +260,6 @@ button {
 
   border-top: 1px solid var(--line);
 }
-
 
 .about-grid {
   display: grid;
@@ -316,7 +271,6 @@ button {
   margin-top: 60px;
 }
 
-
 .about-section h2 {
   margin-top: 25px;
 
@@ -327,16 +281,13 @@ button {
   letter-spacing: -0.07em;
 }
 
-
 .about-section h2 span {
   color: var(--accent);
 }
 
-
 .about-content {
   padding-top: 20px;
 }
-
 
 .large-text {
   color: var(--text);
@@ -344,7 +295,6 @@ button {
   font-size: 25px;
   line-height: 1.45;
 }
-
 
 .about-content > p:not(.large-text) {
   max-width: 500px;
@@ -355,7 +305,6 @@ button {
 
   line-height: 1.8;
 }
-
 
 .about-details {
   display: grid;
@@ -371,7 +320,6 @@ button {
   border-top: 1px solid var(--line);
 }
 
-
 .about-details span {
   display: block;
 
@@ -380,7 +328,6 @@ button {
   font-family: var(--font-mono);
   font-size: 8px;
 }
-
 
 .about-details strong {
   display: block;
@@ -391,14 +338,9 @@ button {
 }
 
 
-
-/* =====================================================
-   EDUCATION
-===================================================== */
+/* EDUCATION */
 
 .education-section {
-  position: relative;
-
   min-height: 100vh;
 
   padding: 150px 10vw;
@@ -406,11 +348,9 @@ button {
   border-top: 1px solid var(--line);
 }
 
-
 .education-header {
   margin-top: 35px;
 }
-
 
 .education-eyebrow {
   color: var(--muted);
@@ -420,7 +360,6 @@ button {
 
   letter-spacing: 0.12em;
 }
-
 
 .education-header h2 {
   margin-top: 20px;
@@ -432,16 +371,12 @@ button {
   letter-spacing: -0.075em;
 }
 
-
 .education-header h2 span {
   color: var(--accent);
 }
 
 
-
-/* =====================================================
-   TIMELINE
-===================================================== */
+/* TIMELINE */
 
 .education-timeline {
   position: relative;
@@ -457,7 +392,6 @@ button {
   justify-content: space-between;
 }
 
-
 .timeline-line {
   position: absolute;
 
@@ -469,7 +403,6 @@ button {
 
   background: var(--line);
 }
-
 
 .timeline-item {
   position: relative;
@@ -498,7 +431,6 @@ button {
   font-family: var(--font-mono);
 }
 
-
 .timeline-dot {
   width: 15px;
   height: 15px;
@@ -512,27 +444,20 @@ button {
   transition: all 0.35s ease;
 }
 
-
 .timeline-year {
   font-size: 10px;
-
-  letter-spacing: 0.05em;
 
   transition: color 0.35s ease;
 }
 
-
 .timeline-item:hover .timeline-dot {
   border-color: var(--accent);
-
   transform: scale(1.2);
 }
-
 
 .timeline-item.active {
   color: var(--text);
 }
-
 
 .timeline-item.active .timeline-dot {
   border-color: var(--accent);
@@ -544,10 +469,7 @@ button {
 }
 
 
-
-/* =====================================================
-   FOCUS CARD
-===================================================== */
+/* FOCUS CARD */
 
 .education-focus {
   display: grid;
@@ -563,7 +485,6 @@ button {
   overflow: hidden;
 }
 
-
 .education-focus-main {
   position: relative;
 
@@ -576,7 +497,6 @@ button {
 
   border-right: 1px solid var(--line);
 }
-
 
 .focus-top {
   position: absolute;
@@ -592,14 +512,12 @@ button {
   align-items: center;
 }
 
-
 .focus-number {
   color: var(--muted-dark);
 
   font-family: var(--font-mono);
   font-size: 11px;
 }
-
 
 .focus-status {
   padding: 7px 10px;
@@ -610,17 +528,13 @@ button {
 
   font-family: var(--font-mono);
   font-size: 8px;
-
-  letter-spacing: 0.08em;
 }
-
 
 .focus-status.current {
   color: var(--accent);
 
   border-color: rgba(184, 255, 92, 0.3);
 }
-
 
 .focus-period {
   color: var(--muted);
@@ -631,7 +545,6 @@ button {
   margin-bottom: 15px;
 }
 
-
 .education-focus-main h3 {
   font-size: clamp(45px, 5vw, 75px);
 
@@ -639,7 +552,6 @@ button {
 
   letter-spacing: -0.065em;
 }
-
 
 .focus-institution {
   max-width: 400px;
@@ -655,7 +567,6 @@ button {
   line-height: 1.5;
 }
 
-
 .focus-location {
   margin-top: 8px;
 
@@ -666,15 +577,10 @@ button {
   font-size: 9px;
 
   text-transform: uppercase;
-
-  letter-spacing: 0.08em;
 }
 
 
-
-/* =====================================================
-   FOCUS DETAILS
-===================================================== */
+/* FOCUS DETAILS */
 
 .education-focus-details {
   padding: 38px;
@@ -685,7 +591,6 @@ button {
   justify-content: space-between;
 }
 
-
 .focus-label {
   color: var(--muted-dark);
 
@@ -694,7 +599,6 @@ button {
 
   letter-spacing: 0.12em;
 }
-
 
 .focus-description {
   max-width: 550px;
@@ -708,7 +612,6 @@ button {
   line-height: 1.85;
 }
 
-
 .focus-bottom {
   display: flex;
 
@@ -721,7 +624,6 @@ button {
   border-top: 1px solid var(--line);
 }
 
-
 .focus-result {
   display: flex;
 
@@ -730,25 +632,18 @@ button {
   gap: 14px;
 }
 
-
 .focus-result span {
   color: var(--muted-dark);
 
   font-family: var(--font-mono);
   font-size: 9px;
-
-  letter-spacing: 0.08em;
 }
-
 
 .focus-result strong {
   color: var(--accent);
 
   font-size: 32px;
-
-  font-weight: 600;
 }
-
 
 .focus-hint {
   color: var(--muted-dark);
@@ -756,15 +651,10 @@ button {
   font-family: var(--font-mono);
 
   font-size: 8px;
-
-  letter-spacing: 0.08em;
 }
 
 
-
-/* =====================================================
-   PREVIEW CARDS
-===================================================== */
+/* PREVIEW CARDS */
 
 .education-preview {
   display: grid;
@@ -775,7 +665,6 @@ button {
 
   margin-top: 20px;
 }
-
 
 .education-preview-card {
   min-height: 100px;
@@ -803,7 +692,6 @@ button {
   transition: all 0.35s ease;
 }
 
-
 .education-preview-card:hover {
   background: var(--surface);
 
@@ -811,7 +699,6 @@ button {
 
   transform: translateY(-4px);
 }
-
 
 .education-preview-card > span:first-child {
   color: var(--muted-dark);
@@ -821,13 +708,11 @@ button {
   font-size: 10px;
 }
 
-
 .education-preview-card strong {
   display: block;
 
   font-size: 16px;
 }
-
 
 .education-preview-card small {
   display: block;
@@ -843,28 +728,22 @@ button {
   text-transform: uppercase;
 }
 
-
 .preview-arrow {
   font-size: 18px;
 
   transition: transform 0.3s ease;
 }
 
-
 .education-preview-card:hover .preview-arrow {
   transform: translate(4px, -4px);
 }
 
 
-
-/* =====================================================
-   EDUCATION ANIMATION
-===================================================== */
+/* CARD ANIMATION */
 
 .education-focus.switching {
   animation: focusSwitch 0.35s ease;
 }
-
 
 @keyframes focusSwitch {
 
@@ -881,10 +760,7 @@ button {
 }
 
 
-
-/* =====================================================
-   PROJECTS
-===================================================== */
+/* PROJECTS */
 
 .projects-section {
   min-height: 100vh;
@@ -894,11 +770,9 @@ button {
   border-top: 1px solid var(--line);
 }
 
-
 .projects-header {
   margin-top: 35px;
 }
-
 
 .projects-header h2 {
   margin-top: 20px;
@@ -910,16 +784,13 @@ button {
   letter-spacing: -0.075em;
 }
 
-
 .projects-header h2 span {
   color: var(--accent);
 }
 
-
 .projects-list {
   margin-top: 80px;
 }
-
 
 .project-card {
   display: grid;
@@ -935,16 +806,13 @@ button {
   transition: padding 0.3s ease;
 }
 
-
 .project-card:last-child {
   border-bottom: 1px solid var(--line);
 }
 
-
 .project-card:hover {
   padding-left: 15px;
 }
-
 
 .project-number {
   color: var(--muted-dark);
@@ -954,13 +822,11 @@ button {
   font-size: 10px;
 }
 
-
 .project-info h3 {
   font-size: 32px;
 
   letter-spacing: -0.04em;
 }
-
 
 .project-info p {
   max-width: 550px;
@@ -972,7 +838,6 @@ button {
   line-height: 1.7;
 }
 
-
 .project-tags {
   display: flex;
 
@@ -980,7 +845,6 @@ button {
 
   margin-top: 20px;
 }
-
 
 .project-tags span {
   padding: 6px 9px;
@@ -992,10 +856,7 @@ button {
   font-family: var(--font-mono);
 
   font-size: 7px;
-
-  text-transform: uppercase;
 }
-
 
 .project-link {
   align-self: center;
@@ -1005,15 +866,10 @@ button {
   font-family: var(--font-mono);
 
   font-size: 9px;
-
-  text-transform: uppercase;
 }
 
 
-
-/* =====================================================
-   CONTACT
-===================================================== */
+/* CONTACT */
 
 .contact-section {
   min-height: 90vh;
@@ -1025,7 +881,6 @@ button {
 
   border-top: 1px solid var(--line);
 }
-
 
 .contact-section h2 {
   max-width: 1000px;
@@ -1039,11 +894,9 @@ button {
   letter-spacing: -0.08em;
 }
 
-
 .contact-section h2 span {
   color: var(--accent);
 }
-
 
 .contact-email {
   width: fit-content;
@@ -1060,7 +913,6 @@ button {
 
   font-size: 12px;
 }
-
 
 .contact-footer {
   margin-top: auto;
@@ -1081,10 +933,7 @@ button {
 }
 
 
-
-/* =====================================================
-   TABLET
-===================================================== */
+/* TABLET */
 
 @media (max-width: 900px) {
 
@@ -1092,11 +941,9 @@ button {
     padding: 0 6vw;
   }
 
-
   .nav-links {
     display: none;
   }
-
 
   .hero {
     grid-template-columns: 1fr;
@@ -1104,13 +951,11 @@ button {
     padding: 130px 6vw 80px;
   }
 
-
   .hero-image-wrap {
     justify-self: start;
 
     width: min(100%, 430px);
   }
-
 
   .about-section,
   .education-section,
@@ -1120,18 +965,15 @@ button {
     padding-right: 6vw;
   }
 
-
   .about-grid {
     grid-template-columns: 1fr;
 
     gap: 60px;
   }
 
-
   .education-focus {
     grid-template-columns: 1fr;
   }
-
 
   .education-focus-main {
     min-height: 350px;
@@ -1141,16 +983,13 @@ button {
     border-bottom: 1px solid var(--line);
   }
 
-
   .education-focus-details {
     min-height: 330px;
   }
 
-
   .project-card {
     grid-template-columns: 50px 1fr;
   }
-
 
   .project-link {
     grid-column: 2;
@@ -1159,10 +998,7 @@ button {
 }
 
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
+/* MOBILE */
 
 @media (max-width: 600px) {
 
@@ -1170,36 +1006,29 @@ button {
     height: 70px;
   }
 
-
   .logo {
     font-size: 12px;
   }
-
 
   .nav-contact {
     font-size: 8px;
   }
 
-
   .hero {
     padding-top: 110px;
   }
-
 
   .hero h1 {
     font-size: 18vw;
   }
 
-
   .hero-description {
     font-size: 14px;
   }
 
-
   .hero-actions {
     flex-wrap: wrap;
   }
-
 
   .about-section,
   .education-section,
@@ -1209,28 +1038,23 @@ button {
     padding-bottom: 100px;
   }
 
-
   .about-section h2,
   .education-header h2,
   .projects-header h2 {
     font-size: 20vw;
   }
 
-
   .about-details {
     grid-template-columns: 1fr;
   }
-
 
   .education-timeline {
     margin-top: 70px;
   }
 
-
   .timeline-year {
     font-size: 8px;
   }
-
 
   .education-focus-main {
     min-height: 330px;
@@ -1238,22 +1062,18 @@ button {
     padding: 28px;
   }
 
-
   .focus-top {
     left: 28px;
     right: 28px;
   }
 
-
   .education-focus-main h3 {
     font-size: 48px;
   }
 
-
   .focus-institution {
     font-size: 14px;
   }
-
 
   .education-focus-details {
     min-height: 350px;
@@ -1261,15 +1081,11 @@ button {
     padding: 28px;
   }
 
-
   .focus-description {
     margin-top: 30px;
 
     font-size: 14px;
-
-    line-height: 1.8;
   }
-
 
   .focus-bottom {
     align-items: flex-start;
@@ -1279,16 +1095,9 @@ button {
     gap: 20px;
   }
 
-
-  .focus-result strong {
-    font-size: 28px;
-  }
-
-
   .education-preview {
     grid-template-columns: 1fr;
   }
-
 
   .project-card {
     grid-template-columns: 35px 1fr;
@@ -1296,21 +1105,17 @@ button {
     gap: 15px;
   }
 
-
   .project-info h3 {
     font-size: 25px;
   }
-
 
   .project-link {
     grid-column: 2;
   }
 
-
   .contact-section h2 {
     font-size: 20vw;
   }
-
 
   .contact-footer {
     flex-direction: column;
