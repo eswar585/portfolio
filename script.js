@@ -1,369 +1,288 @@
-/* =====================================================
-   MOBILE MENU
-===================================================== */
+/* =========================
+   CUSTOM CURSOR
+========================= */
 
-const menuButton =
-  document.querySelector(".menu-button");
+const cursor = document.querySelector(".cursor");
+const cursorRing = document.querySelector(".cursor-ring");
 
-const navLinks =
-  document.querySelector(".nav-links");
+if (cursor && cursorRing) {
+
+    document.addEventListener("mousemove", (e) => {
+
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+
+        cursorRing.animate(
+            {
+                left: `${e.clientX}px`,
+                top: `${e.clientY}px`
+            },
+            {
+                duration: 350,
+                fill: "forwards"
+            }
+        );
+
+    });
 
 
-if (menuButton && navLinks) {
-
-  menuButton.addEventListener(
-    "click",
-    () => {
-
-      navLinks.classList.toggle("open");
-
-    }
-  );
+    const interactiveElements = document.querySelectorAll(
+        "a, button, .outline-text, .education-item, .project-card, .profile-wrapper"
+    );
 
 
-  navLinks
-    .querySelectorAll("a")
-    .forEach((link) => {
+    interactiveElements.forEach((element) => {
 
-      link.addEventListener(
-        "click",
-        () => {
+        element.addEventListener("mouseenter", () => {
 
-          navLinks.classList.remove(
-            "open"
-          );
+            cursorRing.style.width = "60px";
+            cursorRing.style.height = "60px";
+            cursorRing.style.borderColor = "rgba(200, 255, 61, 0.8)";
 
-        }
-      );
+        });
+
+
+        element.addEventListener("mouseleave", () => {
+
+            cursorRing.style.width = "38px";
+            cursorRing.style.height = "38px";
+            cursorRing.style.borderColor = "rgba(200, 255, 61, 0.45)";
+
+        });
 
     });
 
 }
 
 
-/* =====================================================
-   EDUCATION DATA
-===================================================== */
+/* =========================
+   IMAGE 3D CURSOR MOVEMENT
+========================= */
 
-const educationData = {
+const profileWrapper = document.querySelector(".profile-wrapper");
 
-  btech: {
+if (profileWrapper) {
 
-    number: "01",
+    profileWrapper.addEventListener("mousemove", (event) => {
 
-    status: "CURRENT",
+        const rect = profileWrapper.getBoundingClientRect();
 
-    statusClass: "current",
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
 
-    period: "2025 — 2029",
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
 
-    title: "B.Tech",
+        const rotateX = ((y - centerY) / centerY) * -3;
+        const rotateY = ((x - centerX) / centerX) * 3;
 
-    institution:
-      "Vignan University, Vadlamudi",
+        profileWrapper.style.transform =
+            `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.015)`;
 
-    location:
-      "Guntur, Andhra Pradesh",
+    });
 
-    description:
-      "Currently pursuing my Bachelor of Technology at Vignan University, Vadlamudi, while developing my skills in engineering, technology, problem solving and practical development.",
 
-    resultLabel: "CGPA",
+    profileWrapper.addEventListener("mouseleave", () => {
 
-    result: "8.55"
+        profileWrapper.style.transform =
+            "perspective(900px) rotateX(0deg) rotateY(0deg) scale(1)";
 
-  },
-
-
-  mpc: {
-
-    number: "02",
-
-    status: "COMPLETED",
-
-    statusClass: "",
-
-    period: "2023 — 2025",
-
-    title: "MPC",
-
-    institution:
-      "Bhashyam Junior College",
-
-    location:
-      "Guntur, Andhra Pradesh",
-
-    description:
-      "Completed my MPC stream at Bhashyam Junior College, Guntur, with a strong academic foundation in Mathematics, Physics and Chemistry.",
-
-    resultLabel: "PERCENTAGE",
-
-    result: "97.5%"
-
-  },
-
-
-  school: {
-
-    number: "03",
-
-    status: "COMPLETED",
-
-    statusClass: "",
-
-    period: "2021 — 2023",
-
-    title: "High School",
-
-    institution:
-      "Bhashyam High School",
-
-    location:
-      "Guntur, Andhra Pradesh",
-
-    description:
-      "Completed my high school education at Bhashyam High School, Guntur, building a strong academic foundation and disciplined learning habits.",
-
-    resultLabel: "PERCENTAGE",
-
-    result: "95.6%"
-
-  }
-
-};
-
-
-/* =====================================================
-   EDUCATION FOCUS CARD
-===================================================== */
-
-const educationButtons =
-  document.querySelectorAll(
-    "[data-education]"
-  );
-
-
-const focusNumber =
-  document.getElementById(
-    "focusNumber"
-  );
-
-const focusStatus =
-  document.getElementById(
-    "focusStatus"
-  );
-
-const focusPeriod =
-  document.getElementById(
-    "focusPeriod"
-  );
-
-const focusTitle =
-  document.getElementById(
-    "focusTitle"
-  );
-
-const focusInstitution =
-  document.getElementById(
-    "focusInstitution"
-  );
-
-const focusLocation =
-  document.getElementById(
-    "focusLocation"
-  );
-
-const focusDescription =
-  document.getElementById(
-    "focusDescription"
-  );
-
-const focusResultLabel =
-  document.getElementById(
-    "focusResultLabel"
-  );
-
-const focusResult =
-  document.getElementById(
-    "focusResult"
-  );
-
-
-const timelineItems =
-  document.querySelectorAll(
-    ".timeline-item"
-  );
-
-
-function updateEducation(key) {
-
-  const data =
-    educationData[key];
-
-
-  if (!data) {
-
-    return;
-
-  }
-
-
-  focusNumber.textContent =
-    data.number;
-
-
-  focusStatus.textContent =
-    data.status;
-
-
-  focusStatus.className =
-    "focus-status " +
-    data.statusClass;
-
-
-  focusPeriod.textContent =
-    data.period;
-
-
-  focusTitle.textContent =
-    data.title;
-
-
-  focusInstitution.textContent =
-    data.institution;
-
-
-  focusLocation.textContent =
-    data.location;
-
-
-  focusDescription.textContent =
-    data.description;
-
-
-  focusResultLabel.textContent =
-    data.resultLabel;
-
-
-  focusResult.textContent =
-    data.result;
-
-
-  timelineItems.forEach(
-    (item) => {
-
-      item.classList.toggle(
-
-        "active",
-
-        item.dataset.education === key
-
-      );
-
-    }
-  );
+    });
 
 }
 
 
-educationButtons.forEach(
-  (button) => {
+/* =========================
+   EDUCATION FOCUS CARD
+========================= */
 
-    button.addEventListener(
-      "click",
-      () => {
+const educationItems =
+    document.querySelectorAll(".education-item");
 
-        updateEducation(
-          button.dataset.education
+const focusTitle =
+    document.querySelector("#focus-title");
+
+const focusInstitution =
+    document.querySelector("#focus-institution");
+
+const focusLocation =
+    document.querySelector("#focus-location");
+
+const focusPeriod =
+    document.querySelector("#focus-period");
+
+const focusScore =
+    document.querySelector("#focus-score");
+
+const focusDescription =
+    document.querySelector("#focus-description");
+
+
+educationItems.forEach((item) => {
+
+    item.addEventListener("click", () => {
+
+        educationItems.forEach((education) => {
+            education.classList.remove("active");
+        });
+
+        item.classList.add("active");
+
+
+        const title =
+            item.dataset.title;
+
+        const institution =
+            item.dataset.institution;
+
+        const location =
+            item.dataset.location;
+
+        const period =
+            item.dataset.period;
+
+        const score =
+            item.dataset.score;
+
+        const description =
+            item.dataset.description;
+
+
+        focusTitle.textContent = title;
+
+        focusInstitution.textContent = institution;
+
+        focusLocation.textContent = location;
+
+        focusPeriod.textContent = period;
+
+        focusScore.textContent = score;
+
+        focusDescription.textContent = description;
+
+
+        const focusCard =
+            document.querySelector(".education-focus");
+
+        focusCard.animate(
+            [
+                {
+                    opacity: 0.5,
+                    transform: "translateY(8px)"
+                },
+                {
+                    opacity: 1,
+                    transform: "translateY(0)"
+                }
+            ],
+            {
+                duration: 350,
+                easing: "ease-out"
+            }
         );
 
-      }
+    });
+
+});
+
+
+/* =========================
+   SMOOTH NAVIGATION
+========================= */
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+
+    link.addEventListener("click", (event) => {
+
+        const targetId =
+            link.getAttribute("href");
+
+        const target =
+            document.querySelector(targetId);
+
+        if (!target) return;
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    });
+
+});
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const revealElements =
+    document.querySelectorAll(
+        ".section-label, .about-content, .project-card, .education-item, .contact-content"
     );
 
-  }
-);
 
+const revealObserver =
+    new IntersectionObserver(
+        (entries) => {
 
-/* =====================================================
-   INITIAL EDUCATION
-===================================================== */
+            entries.forEach((entry) => {
 
-updateEducation("btech");
+                if (entry.isIntersecting) {
 
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
 
-/* =====================================================
-   NAVIGATION ACTIVE STATE
-===================================================== */
+                    revealObserver.unobserve(entry.target);
 
-const sections =
-  document.querySelectorAll(
-    "section[id]"
-  );
+                }
 
+            });
 
-const navigationLinks =
-  document.querySelectorAll(
-    ".nav-links a"
-  );
-
-
-const sectionObserver =
-  new IntersectionObserver(
-    (entries) => {
-
-      entries.forEach(
-        (entry) => {
-
-          if (
-            !entry.isIntersecting
-          ) {
-
-            return;
-
-          }
-
-
-          navigationLinks.forEach(
-            (link) => {
-
-              link.classList.remove(
-                "active"
-              );
-
-            }
-          );
-
-
-          const activeLink =
-            document.querySelector(
-              `.nav-links a[href="#${entry.target.id}"]`
-            );
-
-
-          if (activeLink) {
-
-            activeLink.classList.add(
-              "active"
-            );
-
-          }
-
+        },
+        {
+            threshold: 0.12
         }
-      );
-
-    },
-    {
-      threshold: 0.35
-    }
-  );
-
-
-sections.forEach(
-  (section) => {
-
-    sectionObserver.observe(
-      section
     );
 
-  }
-);
+
+revealElements.forEach((element) => {
+
+    element.style.opacity = "0";
+
+    element.style.transform = "translateY(30px)";
+
+    element.style.transition =
+        "opacity 0.8s ease, transform 0.8s ease";
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =========================
+   OUTLINE TEXT INTERACTION
+========================= */
+
+const outlineTexts =
+    document.querySelectorAll(".outline-text");
+
+
+outlineTexts.forEach((text) => {
+
+    text.addEventListener("mouseenter", () => {
+
+        text.style.color = "var(--accent)";
+
+    });
+
+
+    text.addEventListener("mouseleave", () => {
+
+        text.style.color = "transparent";
+
+    });
+
+});
