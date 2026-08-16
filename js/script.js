@@ -1,9 +1,12 @@
 /* =====================================================
-   MOBILE NAVIGATION
+   MOBILE MENU
 ===================================================== */
 
-const menuButton = document.querySelector(".menu-button");
-const navLinks = document.querySelector(".nav-links");
+const menuButton =
+  document.querySelector(".menu-button");
+
+const navLinks =
+  document.querySelector(".nav-links");
 
 
 if (menuButton && navLinks) {
@@ -37,46 +40,6 @@ if (menuButton && navLinks) {
       });
 
     });
-
-}
-
-
-/* =====================================================
-   HERO PHOTO MOVEMENT
-===================================================== */
-
-const heroPhoto =
-  document.querySelector(".hero-photo");
-
-
-if (
-  heroPhoto &&
-  window.innerWidth > 800
-) {
-
-  document.addEventListener(
-    "mousemove",
-    (event) => {
-
-      const x =
-        (event.clientX /
-          window.innerWidth -
-          0.5) * 8;
-
-      const y =
-        (event.clientY /
-          window.innerHeight -
-          0.5) * 8;
-
-
-      heroPhoto.style.marginLeft =
-        `${x}px`;
-
-      heroPhoto.style.marginTop =
-        `${y}px`;
-
-    }
-  );
 
 }
 
@@ -132,3 +95,46 @@ window.addEventListener(
 
   }
 );
+
+
+/* =====================================================
+   HERO PHOTO PARALLAX
+===================================================== */
+
+const heroPhoto =
+  document.querySelector(".hero-photo");
+
+
+if (heroPhoto) {
+
+  document.addEventListener(
+    "mousemove",
+    (event) => {
+
+      if (window.innerWidth <= 800) {
+        return;
+      }
+
+
+      const x =
+        (event.clientX /
+          window.innerWidth -
+          0.5) * 8;
+
+
+      const y =
+        (event.clientY /
+          window.innerHeight -
+          0.5) * 8;
+
+
+      heroPhoto.style.marginLeft =
+        `${x}px`;
+
+      heroPhoto.style.marginTop =
+        `${y}px`;
+
+    }
+  );
+
+}
