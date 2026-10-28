@@ -1525,3 +1525,56 @@ button {
         display: none;
     }
 }
+
+/* CV BUTTONS */
+.cv-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.cv-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 16px 22px;
+    border: 1px solid var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    transition: all 0.3s ease;
+}
+
+.cv-button span {
+    font-size: 17px;
+}
+
+.cv-download {
+    background: var(--accent);
+    color: var(--background);
+}
+
+.cv-view {
+    color: var(--accent);
+    background: transparent;
+}
+
+.cv-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(200, 255, 61, 0.12);
+}
+
+.cv-view:hover {
+    background: var(--accent);
+    color: var(--background);
+}
+
+@media (max-width: 700px) {
+    .cv-buttons {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
